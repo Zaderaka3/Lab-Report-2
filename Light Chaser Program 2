@@ -1,0 +1,45 @@
+/*
+* Goal: This program creates an extended "chasing" light effect using four LEDs. 
+*       Each LED turns on in a specific sequence with variations to enhance the effect, 
+*       producing a dynamic chasing pattern.
+* Main Theme: Digital output control using multiple LEDs with timed delays to create 
+*             a sequential and combinational lighting effect.
+*/
+int B = 13; // Assign pin 13 to the blue LED
+int G = 12; // Assign pin 12 to the green LED
+int R = 11; // Assign pin 11 to the red LED
+int W = 10; // Assign pin 10 to the white LED
+void setup() {
+	// Initialize the pins as outputs
+  pinMode(B, OUTPUT);
+	pinMode(G, OUTPUT);
+	pinMode(R, OUTPUT);
+	pinMode(W, OUTPUT);
+} 
+// The loop function runs repeatedly to create the chasing effect
+void loop() {
+	// Step 1: Blue LED on, others off
+	digitalWrite(B, HIGH); digitalWrite(G, LOW); digitalWrite(R, LOW); digitalWrite(W, LOW);
+	delay(1000); // Wait for 1 second
+	// Step 2: Blue and Green LEDs on, others off
+	digitalWrite(B, HIGH); digitalWrite(G, HIGH); digitalWrite(R, LOW); digitalWrite(W, LOW);
+	delay(1000); // Wait for 1 second
+	// Step 3: Blue, Green and Red LEDs on, others off
+	digitalWrite(B, HIGH); digitalWrite(G, HIGH); digitalWrite(R, HIGH); digitalWrite(W, LOW);
+	delay(1000); // Wait for 1 second
+	// Step 4: All LEDs on
+	digitalWrite(B, HIGH); digitalWrite(G, HIGH); digitalWrite(R, HIGH); digitalWrite(W, HIGH);
+	delay(1000); // Wait for 1 second
+	// Step 5: Blue, Green and Red LEDs on, others off
+	digitalWrite(B, HIGH); digitalWrite(G, HIGH); digitalWrite(R, HIGH); digitalWrite(W, LOW);
+	delay(1000); // Wait for 1 second
+	// Step 6: Blue and Green LEDs on, others off
+	digitalWrite(B, HIGH); digitalWrite(G, HIGH); digitalWrite(R, LOW); digitalWrite(W, LOW);
+	delay(1000); // Wait for 1 second
+	// Step 7: Blue LED on, others off
+	digitalWrite(B, HIGH); digitalWrite(G, LOW); digitalWrite(R, LOW); digitalWrite(W, LOW);
+	delay(1000); // Wait for 1 second
+	// Step 8: Reset pattern with all LEDs off
+	digitalWrite(B, LOW); digitalWrite(G, LOW); digitalWrite(R, LOW); digitalWrite(W, LOW);
+	delay(1000); // Wait for 1 second
+}
