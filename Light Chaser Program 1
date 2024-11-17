@@ -1,0 +1,30 @@
+/*
+* Goal: This program creates a "chasing" light effect by lighting up each LED in a sequence.
+* Main Theme: Digital output control using multiple LEDs, with delays to create the chasing effect.
+*/
+int B = 13; // Assign pin 13 to the blue LED
+int G = 12; // Assign pin 12 to the green LED
+int R = 11; // Assign pin 11 to the red LED
+int W = 10; // Assign pin 10 to the white LED 
+void setup() {
+	// Initialize the pins as outputs
+	pinMode(B, OUTPUT);
+	pinMode(G, OUTPUT);
+	pinMode(R, OUTPUT);
+	pinMode(W, OUTPUT);
+}
+// The loop function runs repeatedly to create the chasing effect
+void loop() {
+	// Light up the white LED and turn off others
+	digitalWrite(B, HIGH); digitalWrite(G, LOW); digitalWrite(R, LOW); digitalWrite(W, LOW);
+	delay(1000); // Wait for 1 second
+	// Light up the white LED and turn off others
+	digitalWrite(B, LOW); digitalWrite(G, HIGH); digitalWrite(R, LOW); digitalWrite(W, LOW);
+	delay(1000); // Wait for 1 second
+	// Light up the white LED and turn off others
+  digitalWrite(B, LOW); digitalWrite(G, LOW); digitalWrite(R, HIGH); digitalWrite(W, LOW);
+	delay(1000); // Wait for 1 second
+	// Light up the white LED and turn off others
+	digitalWrite(B, LOW); digitalWrite(G, LOW); digitalWrite(R, LOW); digitalWrite(W, HIGH);
+	delay(1000); // Wait for 1 second
+}
