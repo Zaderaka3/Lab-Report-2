@@ -1,0 +1,12 @@
+int buttonState = 0; // Variable for reading the button status
+void setup() {
+Serial.begin(9600); // Initialize serial communication
+pinMode(2, INPUT); // Set the button pin as input
+}
+	
+void loop() {
+	buttonState = digitalRead(2); // Read the state of the push button
+	Serial.print("Button =  "); // Display the button state on the Serial Monitor
+	Serial.println(buttonState); // Print the button state (1 for pressed, 0 for released)
+	delay(100); // Small delay to avoid serial flooding
+}
